@@ -17,6 +17,8 @@ services:
     build: ./lost-found-frontend
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "80:3000"
     depends_on:
       - backend
+    environment:
+      - BACKEND_URL=http://backend:3000
